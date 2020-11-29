@@ -65,3 +65,11 @@ resource "aws_route" "public_igw_rule" {
   destination_cidr_block = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.bladi_todo_igw.id
 }
+
+resource "aws_eip" "bladi_todo_web_server_ip" {
+  vpc = true
+
+  tags = {
+    Name = "bladi-todo-web-server-ip"
+  }
+}
