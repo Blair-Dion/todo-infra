@@ -17,5 +17,24 @@
 
 ## How To Run
 
-작성예정
+```shell
+cd init
+mv backend.tf backend
+terraform init
+terraform plan
+terraform apply
+
+yes
+
+mv backend backend.tf
+terraform init
+rm -f terraform.tfstate*
+
+cd ../vpc
+terraform init
+terraform plan
+terraform apply
+
+yes
+```
 
