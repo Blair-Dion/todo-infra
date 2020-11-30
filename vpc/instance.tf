@@ -29,6 +29,10 @@ resource "aws_security_group" "bladi_todo_web_server_sg" {
       "0.0.0.0/0"
     ]
   }
+
+  tags = {
+    Name = "bladi-todo-web-server-sg"
+  }
 }
 
 data "aws_ami" "ubuntu-18_04" {
