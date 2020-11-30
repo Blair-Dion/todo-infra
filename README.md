@@ -1,4 +1,4 @@
-# Todo Project Backend
+# Todo Project Infra
 
 내가 짠 코드도 리뷰하자!
 
@@ -37,4 +37,3 @@ terraform apply
 
 yes
 ```
-
