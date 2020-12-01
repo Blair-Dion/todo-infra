@@ -27,65 +27,67 @@ drop table if exists user;
 create table board
 (
     id               bigint auto_increment primary key,
+    name             varchar(255),
     created_datetime datetime(6),
-    updated_datetime datetime(6),
     created_by       bigint,
-    updated_by       bigint,
-    name             varchar(255)
+    updated_datetime datetime(6),
+    updated_by       bigint
 ) engine = InnoDB;
 
 create table card
 (
     id                bigint auto_increment primary key,
-    created_datetime  datetime(6),
-    updated_datetime  datetime(6),
-    created_by        bigint,
-    updated_by        bigint,
-    archived_datetime datetime(6),
+    title             varchar(255),
     contents          varchar(255),
     is_archived       bit not null,
-    title             varchar(255),
+    archived_datetime datetime(6),
     list_id           bigint,
-    user_id           bigint
+    user_id           bigint,
+    created_datetime  datetime(6),
+    created_by        bigint,
+    updated_datetime  datetime(6),
+    updated_by        bigint
 ) engine = InnoDB;
 
 create table list
 (
     id                bigint auto_increment primary key,
-    created_datetime  datetime(6),
-    updated_datetime  datetime(6),
-    created_by        bigint,
-    updated_by        bigint,
-    archived_datetime datetime(6),
-    is_archived       bit not null,
     name              varchar(255),
-    board_id          bigint
+    is_archived       bit not null,
+    archived_datetime datetime(6),
+    board_id          bigint,
+    created_datetime  datetime(6),
+    created_by        bigint,
+    updated_datetime  datetime(6),
+    updated_by        bigint
 ) engine = InnoDB;
 
 create table log
 (
     id               bigint auto_increment primary key,
-    created_datetime datetime(6),
-    updated_datetime datetime(6),
-    created_by       bigint,
-    updated_by       bigint,
-    after_contents   varchar(255),
+    type             varchar(255),
+    before_title     varchar(255),
+    after_title      varchar(255),
     before_contents  varchar(255),
+    after_contents   varchar(255),
     from_list_id     bigint,
     to_list_id       bigint,
-    type             varchar(255),
-    board_id         bigint
+    board_id         bigint,
+    created_datetime datetime(6),
+    created_by       bigint,
+    updated_datetime datetime(6),
+    updated_by       bigint
 ) engine = InnoDB;
 
 create table user
 (
     id                bigint auto_increment primary key,
-    created_datetime  datetime(6),
-    updated_datetime  datetime(6),
-    github_token      varchar(255),
-    profile_image_url varchar(255),
     user_id           varchar(255),
-    user_nickname     varchar(255)
+    user_nickname     varchar(255),
+    profile_image_url varchar(255),
+    github_token      varchar(255),
+    created_datetime  datetime(6),
+    updated_datetime  datetime(6)
 ) engine = InnoDB;
 
 alter table card
