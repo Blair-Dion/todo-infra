@@ -38,8 +38,9 @@ create table card
 (
     id                bigint auto_increment primary key,
     title             varchar(255),
-    contents          varchar(255),
-    is_archived       bit not null,
+    contents          varchar(500),
+    pos               integer not null,
+    is_archived       bit     not null,
     archived_datetime datetime(6),
     list_id           bigint,
     user_id           bigint,
