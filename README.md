@@ -11,10 +11,6 @@
 - AWS EC2
 - NginX
 
-## API Document
-
-작성예정
-
 ## How To Run
 
 ```shell
